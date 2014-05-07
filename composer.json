@@ -6,17 +6,14 @@
             "email": "theman@spiffyjr.me"
         }
     ],
-    "description": "Spiffy\\AsseticPackage is a package for SpiffyFramework that helps you manage your assets.",
+    "description": "Spiffy\\AsseticPackage is a package for SpiffyFramework that integrates Spiffy\\Assetic.",
     "require": {
         "php": ">=5.4",
-        "kriswallsmith/assetic": "~1.1"
+        "spiffy/spiffy-assetic": "~1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0",
         "squizlabs/php_codesniffer": "~1.0"
-    },
-    "suggest": {
-        "natxet/cssmin": "Package required to use the included cssmin filter."
     },
     "autoload": {
         "psr-4": {
