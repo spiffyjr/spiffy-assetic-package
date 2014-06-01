@@ -10,7 +10,7 @@
     "license": "BSD-3-Clause",
     "require": {
         "php": ">=5.4",
-        "spiffy/spiffy-assetic": "~1.0"
+        "spiffy/spiffy-assetic": "~1.0-dev"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0",
