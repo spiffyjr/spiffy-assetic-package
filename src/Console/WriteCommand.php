@@ -3,12 +3,16 @@
 namespace Spiffy\AsseticPackage\Command;
 
 use Spiffy\AsseticPackage\Plugin\WriteAssetPlugin;
-use Spiffy\Mvc\ConsoleCommand;
+use Spiffy\Inject\InjectorAware;
+use Spiffy\Inject\InjectorAwareTrait;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class WriteCommand extends ConsoleCommand
+class WriteCommand extends Command implements InjectorAware
 {
+    use InjectorAwareTrait;
+
     /**
      * {@inheritDoc}
      */
@@ -22,7 +26,7 @@ class WriteCommand extends ConsoleCommand
     /**
      * {@inheritDoc}
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output)
     {
         $i = $this->getInjector();
 
@@ -38,8 +42,8 @@ class WriteCommand extends ConsoleCommand
         $output->writeln('');
 
         $asseticService->writeAssets(
-            $i['spiffy.assetic-package']['output_dir'],
-            $i['spiffy.assetic-package']['variables'],
+            $i['assetic']['output_dir'],
+            $i['assetic']['variables'],
             false
         );
 

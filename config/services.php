@@ -6,7 +6,7 @@ return [
     // plugins
     'spiffy.assetic.plugin.twig-loader-plugin' => [
         'Spiffy\Assetic\Plugin\TwigLoaderPlugin',
-        ['@twig', '$assetic[cache_dir]']
+        ['@twig.environment', '$assetic[cache_dir]']
     ],
     'spiffy.assetic.plugin.asset-loader-plugin' => [
         'Spiffy\Assetic\Plugin\AssetLoaderPlugin',
@@ -14,10 +14,7 @@ return [
     ],
     'spiffy.assetic.plugin.directory-loader-plugin' => [
         'Spiffy\Assetic\Plugin\DirectoryLoaderPlugin',
-        ['$assetic[directories]']
+        ['$assetic[directories]', '$assetic[cache_dir]']
     ],
-    'spiffy.assetic-package.plugin.filter-loader-plugin' => [
-        'Spiffy\AsseticPackage\Plugin\FilterLoaderPlugin',
-        ['@injector', '$assetic[filters]']
-    ]
+    'spiffy.assetic-package.plugin.filter-loader-plugin' => 'Spiffy\AsseticPackage\Plugin\FilterLoaderPluginFactory',
 ];

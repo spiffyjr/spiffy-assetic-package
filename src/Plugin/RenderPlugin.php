@@ -1,12 +1,13 @@
 <?php
 
-namespace Spiffy\AsseticPackage;
+namespace Spiffy\AsseticPackage\Plugin;
 
 use Spiffy\Event\Manager;
 use Spiffy\Event\Plugin;
-use Spiffy\Mvc\MvcEvent;
+use Spiffy\Framework\Application;
+use Spiffy\Framework\ApplicationEvent;
 
-class MvcRenderPlugin implements Plugin
+class RenderPlugin implements Plugin
 {
     /**
      * @param Manager $events
@@ -14,13 +15,13 @@ class MvcRenderPlugin implements Plugin
      */
     public function plug(Manager $events)
     {
-        $events->on(MvcEvent::EVENT_RENDER, [$this, 'onRender'], 1000);
+        $events->on(Application::EVENT_RENDER, [$this, 'onRender'], 1000);
     }
 
     /**
-     * @param MvcEvent $e
+     * @param ApplicationEvent $e
      */
-    public function onRender(MvcEvent $e)
+    public function onRender(ApplicationEvent $e)
     {
         $app = $e->getApplication();
         $i = $app->getInjector();
