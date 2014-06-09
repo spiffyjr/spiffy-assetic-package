@@ -17,4 +17,8 @@ return [
         ['$assetic[directories]', '$assetic[cache_dir]']
     ],
     'spiffy.assetic-package.plugin.filter-loader-plugin' => 'Spiffy\AsseticPackage\Plugin\FilterLoaderPluginFactory',
+    'spiffy.assetic-package.plugin.resolve-alias-plugin' => [
+        'Spiffy\AsseticPackage\Plugin\ResolveAliasPlugin',
+        ['@PackageManager']
+    ]
 ];

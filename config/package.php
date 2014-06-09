@@ -6,7 +6,7 @@ return [
         'autoload' => false,
         'root_dir' => './',
         'cache_dir' => 'cache/assetic',
-        'output_dir' => 'public',
+        'output_dir' => 'public/asset',
         'assets' => [],
         'filters' => [
             'cssmin' => 'Assetic\Filter\CssMinFilter',
@@ -34,6 +34,7 @@ return [
         'plugins' => [
             'asset_loader' => 'spiffy.assetic.plugin.asset-loader-plugin',
             'filter_loader' => 'spiffy.assetic-package.plugin.filter-loader-plugin',
+            'resolve_alias' => 'spiffy.assetic-package.plugin.resolve-alias-plugin',
         ],
     ],
 ];
