@@ -9,6 +9,7 @@ return [
         'output_dir' => 'public/asset',
         'assets' => [],
         'filters' => [
+            'cssembed' => 'Assetic\Filter\PhpCssEmbedFilter',
             'cssmin' => 'Assetic\Filter\CssMinFilter',
             'jsmin' => 'Assetic\Filter\JSMinFilter',
         ],

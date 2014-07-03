@@ -77,6 +77,6 @@ class WriteAssetPlugin implements Plugin
     public function onWatchError(Event $e)
     {
         $output = $this->output;
-        $output->writeln(sprintf('<error>[error] %s</error>', $e->getTarget()->getException()));
+        $output->writeln(sprintf('<error>[error] %s</error>', $e->getTarget()));
     }
 }
