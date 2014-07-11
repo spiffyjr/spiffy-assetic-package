@@ -20,7 +20,9 @@ class WatchCommand extends Command implements InjectorAware
     {
         $this
             ->setName('assetic:watch')
-            ->setDescription('Watches all assets and continually writes updates to the filesystem');
+            ->setDescription('Watches all assets and continually writes updates to the filesystem')
+            ->addOption('force', null, InputOption::VALUE_NONE, 'Forces all assets to be written')
+            ->addOption('period', null, InputOption::VALUE_REQUIRED, 'Sets how long to sleep between checks', 1);
     }
 
     /**
@@ -43,6 +45,8 @@ class WatchCommand extends Command implements InjectorAware
 
         $asseticService->watchAssets(
             $i['assetic']['output_dir'],
+            $input->getOption('force'),
+            $input->getOption('period'),
             $i['assetic']['variables'],
             false
         );
