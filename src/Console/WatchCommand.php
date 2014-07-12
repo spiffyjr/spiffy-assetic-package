@@ -7,6 +7,7 @@ use Spiffy\Inject\InjectorAware;
 use Spiffy\Inject\InjectorAwareTrait;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class WatchCommand extends Command implements InjectorAware
