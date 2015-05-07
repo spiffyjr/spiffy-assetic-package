@@ -41,7 +41,7 @@ class WriteCommand extends Command implements InjectorAware
         $output->writeln(sprintf('Debug mode is <comment>%s</comment>', $assetManager->isDebug() ? 'on' : 'off'));
         $output->writeln('');
 
-        $asseticService->writeAssets(
+        $asseticService->dumpAssets(
             $i['assetic']['output_dir'],
             $i['assetic']['variables'],
             false
